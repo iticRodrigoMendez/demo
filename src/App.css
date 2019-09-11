@@ -1,0 +1,104 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.card-wrapper {
+  display: inline-block;
+  perspective: 1000px;
+}
+.card-wrapper .card {
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  transform-style: preserve-3d;
+}
+.card-wrapper .card .front,
+.card-wrapper .card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.card-wrapper .card .front {
+  z-index: 2;
+}
+.card-wrapper .card .back,
+.card-wrapper.flip-right .card .back {
+  transform: rotateY(180deg);
+}
+.card-wrapper:hover .card,
+.card-wrapper.flip-right:hover .card {
+  transform: rotateY(180deg);
+}
+.card-wrapper,
+.card {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
+.card .front,
+.card .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.card .front {
+  color: #FC545E;
+  background: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.card .back {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  background: #FC545E;
+}
+.cardImage {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+}
+
+.imageName {
+  position: absolute;
+  top: 60%;
+  background-color: #FFF;
+  width: 100%;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
